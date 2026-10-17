@@ -14,6 +14,10 @@ jobs:
     name: Build and Run Unit Tests
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: poe_part1
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,3 +45,4 @@ jobs:
       - name: Run Login unit tests
         run: |
           java -cp "build/ci-classes:junit.jar:hamcrest-core.jar" org.junit.runner.JUnitCore poe_part1.LoginTest
+
